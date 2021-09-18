@@ -20,7 +20,6 @@ const isbnValidate = (isbn) => {
     if(digits.length == 10){
         for (let index = 0; index < digitsArray.length; index++) {
             var number = (digitsArray[index]*num);
-            num++
             lodash.sum(number)
         }
 
@@ -42,11 +41,11 @@ const isbnValidate = (isbn) => {
 
 
 test('Invalid ISBN', () => {
-    expect(isbnValidate('123-2131-231')).toBe('No Valid ISBN');
+    expect(isbnValidate('123-2131-230')).toBe('No Valid ISBN');
 })
 
 test('Valid ISBN', () => {
-    expect(isbnValidate('2-1234-5680-2')).toBe('Valid ISBN');
+    expect(isbnValidate('2-1234-5680-2')).toBe('10 ISBN Digit is Valid!');
 })
 
 test('No string ISBN', () => {
